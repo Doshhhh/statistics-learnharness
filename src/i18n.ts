@@ -231,10 +231,9 @@ let current: Locale = "en";
 
 export function resolveLocale(preference: LocalePreference | undefined, systemLanguage?: string): Locale {
   if (preference === "ru" || preference === "en") return preference;
-  // Any Russian entry in the system language list counts: Windows often keeps an
-  // English UI language while Russian is listed as a preferred language.
-  const languages = systemLanguage !== undefined ? [systemLanguage] : [...(globalThis.navigator?.languages ?? []), globalThis.navigator?.language ?? "en"];
-  return languages.some((language) => typeof language === "string" && language.toLowerCase().startsWith("ru")) ? "ru" : "en";
+  // The primary interface language only: it matches the language LearnHarness itself shows.
+  const language = (systemLanguage ?? globalThis.navigator?.language ?? "en").toLowerCase();
+  return language.startsWith("ru") ? "ru" : "en";
 }
 
 export function setLocale(locale: Locale): void {
