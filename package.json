@@ -1,0 +1,22 @@
+{
+  "name": "statistics-learnharness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Statistics community plugin for LearnHarness: learning statistics by topic in the style of a GitHub profile and Anki stats.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.ts",
+    "install:local": "npm run build && node scripts/install-plugin-local.mjs"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": "1.4.0",
+    "@earendil-works/pi-ai": "1.4.0",
+    "@types/node": "24.13.3",
+    "esbuild": "0.28.2",
+    "linkedom": "^0.18.13",
+    "typescript": "5.9.3"
+  }
+}

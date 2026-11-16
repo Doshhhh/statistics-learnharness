@@ -1,0 +1,12 @@
+{
+  "apiVersion": 1,
+  "id": "statistics",
+  "name": "Statistics",
+  "version": "0.1.0",
+  "minAppVersion": "0.6.0",
+  "description": "Learning statistics by topic: a GitHub-style calendar, focused time, answers and weak spots. Topics come from your roadmaps and from AI suggestions you confirm.",
+  "author": "Doshhhh",
+  "main": "main.js",
+  "backend": "backend.cjs",
+  "styles": "styles.css"
+}
